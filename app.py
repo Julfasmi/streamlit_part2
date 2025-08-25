@@ -12,14 +12,23 @@ def load_model():
 
 model = load_model()
 
-st.title("Deteksi Tombol Like & Komen (YOLOv8s)")
+st.title("Like & Comment Detection (YOLOv8s)")
+
+st.markdown(
+    """
+    ### 📌 How to Use:
+    To try out the model, **upload images in the form of screenshots from various social media platforms** 
+    such as **Facebook, YouTube, or TikTok**.  
+    The model will detect the *Like* and *Comment* elements in the image.
+    """
+)
 
 # Upload gambar
-uploaded_file = st.file_uploader("Upload gambar", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption="Gambar asli", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
 
     # Convert ke format numpy array untuk YOLOv8
     img_array = np.array(image)
@@ -30,4 +39,4 @@ if uploaded_file is not None:
     # Ambil hasil prediksi dan bounding box
     annotated_img = results[0].plot()  # YOLOv8 langsung bisa plot hasilnya
 
-    st.image(annotated_img, caption="Hasil Deteksi", use_column_width=True)
+    st.image(annotated_img, caption="Detection Results", use_column_width=True)
