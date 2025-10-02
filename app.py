@@ -17,8 +17,9 @@ st.title("Like & Comment Detection (YOLOv8s)")
 st.markdown(
     """
     ### 📌 How to Use:
-    To try out the model, **upload images in the form of screenshots from various social media platforms** 
-    such as **Facebook, YouTube, or TikTok**.  
+    To try out the model, please upload images in the form of screenshots 
+    taken from social media platforms (such as **Facebook**, **YouTube**, or **TikTok**) 
+    using your **Mobile Phone**.  
     The model will detect the *Like* and *Comment* elements in the image.
     """
 )
